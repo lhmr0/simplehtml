@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Calculadora</title>
+    <script type="text/javascript">
+        var num1, num2, op, btn;
+function inicio()
+{
+    num1 = document.getElementById("numero1");
+    num2 = document.getElementById("numero2");
+    op = document.getElementById("operacion");
+    btn = document.getElementById("btn");
+    btn.addEventListener("click", calcular);
+}
+function calcular()
+        {
+        var num = Number(num1.value);
+                var numA = Number(num2.value);
+                var calculo = 0;
+                var n;
+                var f=1;
+                if (op.value == "+"){
+        calculo = num + numA;
+                resultado.innerHTML = "<strong>" + calculo + "</strong>";
+        }
+        else if (op.value == "-"){
+        calculo = num - numA;
+                resultado.innerHTML = "<strong>" + calculo + "</strong>";
+        }
+        else if (op.value == "*"){
+        calculo = num * numA;
+                resultado.innerHTML = "<strong>" + calculo + "</strong>";
+        }
+        else if (op.value == "/"){
+        calculo = num / numA;
+                resultado.innerHTML = "<strong>" + calculo + "</strong>";
+        }
+        else if (op.value == "!"){
+        for (n = 1; n <= num; n++)
+        {            
+             f = f*n;
+        }
+        resultado.innerHTML = "<strong>" + f + "</strong>";
+        }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="numero1" placeholder="Ingrese numero" /><br>
+    <input type="text" id="numero2" placeholder="Ingrese numero" /><br>
+<select id="operacion">
+  <option value="+">Suma</option>
+  <option value="-">Resta</option>
+  <option value="/">Division</option>
+  <option value="*">Multiplicacion</option>
+  <option value="!">Factorial</option>
+</select>
+    <input type="button" id="btn" value="Ejecutar" /><br>
+    <div id="resultado">Acá el resultado</div>
+    <script type="text/javascript">
+    inicio();
+    </script>
+</body>
+</html>
+<!-- Hosting24 Analytics Code -->
+<script type="text/javascript" src="http://stats.hosting24.com/count.php"></script>
+<!-- End Of Analytics Code -->
